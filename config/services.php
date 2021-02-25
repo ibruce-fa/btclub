@@ -32,7 +32,7 @@ return [
     'facebook' => [
         'client_id' => '271318484384011',
         'client_secret' => '828eb429e3dfa20b3b899b11e75353af',
-        'redirect' => 'http://localhost/auth/facebook/callback',
+        'redirect' => 'https://bingotime.club/auth/facebook/callback',
     ],
 
 ];
