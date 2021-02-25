@@ -42,4 +42,19 @@ class SocialController extends Controller
             dd($exception->getMessage());
         }
     }
+
+    public function privacy(){
+            return view("policy");
+    }
+    public function termsOfService(){
+            return view("terms");
+    }
+    public function deleteData(){
+            if(\auth()->check()) {
+                User::destroy(\auth()->id());
+                return view("welcome")->with("success", "You've been removed from our site. Thank you");
+            }
+
+            return view("welcome")->with("info", "Sorry, You don't have any profile with us.");
+    }
 }

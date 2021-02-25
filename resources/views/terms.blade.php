@@ -6,7 +6,7 @@
             </div>
 
             <div class="w-full sm:max-w-2xl mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg prose">
-                {!! $terms !!}
+                By using our site, you agree to have as much fun as possible and to not use the site in any way that would be harmful to others or self.
             </div>
         </div>
     </div>
