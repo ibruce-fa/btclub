@@ -1,5 +1,6 @@
 <div>
     {{-- Stop trying to control. --}}
+
     <div class="container my-12 mx-auto px-4 md:px-12">
         <div class="flex flex-wrap -mx-1 lg:-mx-4">
             @forelse($games as $game)
@@ -46,7 +47,7 @@
                         @if($game->status != \App\Models\Game::STATUS_COMPLETED)
                             <footer class="text-center justify-center leading-tight p-2 md:p-4 border">
                                 <a>Provide the link below to your players.</a>
-                                <p><input readonly class="border-none font-bold" style="background: transparent; font-size: 16px;" type="text" id="copy" value="{{sprintf("%s/slot/%s", env("APP_URL"), $game->id)}}" ></p>
+                                <p><input readonly class="border-none font-bold text-center" style="background: transparent; font-size: 16px; width: 100%" type="text" id="copy" value="{{ sprintf('https://bingotime.club/slot/%s', $game->id)}}" ></p>
                                 <a class="text-blue-400 underline text-sm" onclick="copyText()">copy the link</a>
 
                             </footer>

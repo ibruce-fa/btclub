@@ -19,8 +19,8 @@
                                     <div class="grid grid-cols-6 gap-6">
                                         <div class="col-span-6 sm:col-span-3">
                                             <label for="first_name" class="block text-sm font-medium text-gray-700">You may only have 1 active game running at a time</label>
-                                            <select name="product_id" class="mt-1 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                <option>Select a new game to create.</option>
+                                            <select name="product_id" id="product_id" class="mt-1 focus:ring-pink-500 focus:border-pink-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                                                <option value="-1">Select a new game to create.</option>
                                                 @foreach($productList as $product)
                                                     <option value="{{$product->product_id}}">{{$product->product_name}}</option>
                                                 @endforeach
@@ -43,4 +43,5 @@
 
         </div>
     </div>
+    
 </x-app-layout>

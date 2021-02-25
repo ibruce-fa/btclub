@@ -76,7 +76,7 @@ class SlotController extends Controller
             // most likely a spoofed request, log the issue
             dd($email, $product_id, $access, $totalPaid);
             return redirect("/home")->with("warning", "Please don't do that. We are watching");
-        } elseif ($access != env('TOKEN_FROM_WP')) {
+        } elseif ($access != "602dfeca153db<23=fede59736|32_-602dfee577c76e") { // env not working right now
             // most likely a spoofed request, log the issue
             dd($access);
             return redirect("/home")->with("warning", "Please don't do that. We are watching");
