@@ -4,6 +4,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\SlotController;
+use App\Http\Controllers\SocialController;
 use App\Http\Livewire\LiveGameRoom;
 use App\Http\Livewire\SlotReservations;
 use App\Http\Livewire\VirtualGame;
@@ -115,3 +116,6 @@ Route::group(['middleware' => 'auth'], function() {
 |--------------------------------------------------------------------------
 */
 
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);

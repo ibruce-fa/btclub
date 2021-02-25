@@ -11,6 +11,14 @@
                 {{ session('status') }}
             </div>
         @endif
+        {{-- Login with Facebook --}}
+        <div class="flex items-center justify-end mt-4">
+            <a class="btn rounded" href="{{ url('auth/facebook') }}"
+               style="background: #3B5499; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                Login with Facebook
+            </a>
+        </div>
+        <p class="text-center p-3"> or </p>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -47,6 +55,7 @@
                     {{ __('Login') }}
                 </x-jet-button>
             </div>
+
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>

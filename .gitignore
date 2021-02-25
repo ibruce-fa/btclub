@@ -4,6 +4,9 @@
 /public/phpmyadmin
 /storage/*.key
 /vendor
+.DS_Store
+.idea/
+/public/.DS_Store
 .env
 .env.backup
 .phpunit.result.cache

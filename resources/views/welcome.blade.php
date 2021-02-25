@@ -27,6 +27,27 @@
     </style>
 </head>
 <body class="leading-normal tracking-normal text-white gradient main-font">
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '{your-app-id}',
+            cookie     : true,
+            xfbml      : true,
+            version    : '{api-version}'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <!--Nav-->
 <nav id="header" class="fixed w-full z-30 top-0 text-white">
     <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
@@ -68,11 +89,13 @@
         <div class="w-full py-6 text-center">
             <h1 class="text-center">Time to Play! </h1>
             <ul class="list-reset lg:flex justify-end flex-1 justify-center">
-                <li class="mr-3">
-                    <a class="rounded bg-white inline-block text-blue-400 no-underline hover:text-underline py-2 px-4" href="/login">Login</a>
-                
-                    <a class="rounded bg-white inline-block text-blue-400 no-underline hover:text-underline py-2 px-4" href="/register">Register</a>
-                </li>
+                {{-- Login with Facebook --}}
+                <div class="flex items-center justify-end mt-4">
+                    <a class="btn rounded" href="{{ url('auth/facebook') }}"
+                       style="background: white; color: dodgerblue; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                        Login with Facebook
+                    </a>
+                </div>
             </ul>
             <img class="md:w-1/4 sm:w-3/4 z-50 ml-auto mr-auto" src="https://bingotime.club/images/bingo-ball.svg">
         </div>
