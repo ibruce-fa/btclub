@@ -65,7 +65,7 @@ class VirtualGame extends Component
             }
         }
 
-//        dd($this->bingoNumbers);
+
         /**
          * THE GAME ALGORITHM | RANDOM
          */
@@ -74,7 +74,7 @@ class VirtualGame extends Component
             $this->currentSelection = $this->gameNumbersArray[$randomKey];
             unset($this->gameNumbersArray[$randomKey]);
             $owner = $this->bingoNumbers[$this->currentSelection];
-//            dd($owner);
+
 
             ++$this->pointBoard[$owner]["points"];
             $this->pointBoard[$owner]["numbers"][] = $this->currentSelection;
